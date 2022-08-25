@@ -63,6 +63,23 @@ export const createPokemon = (newPokemon) => async dispatch => {
 
 }
 
+export const editPokemon = (pokemon, id) => async dispatch => {
+
+  const response = await fetch(`/api/pokemon/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(pokemon),
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    }
+  })
+  const data = await response.json();
+  console.log(data);
+  dispatch(addOnePokemon(data));
+  return data;
+
+}
+
 const initialState = {
   list: [],
   types: []

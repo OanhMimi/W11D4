@@ -51,9 +51,9 @@ const CreatePokemonForm = ({ hideForm }) => {
       moves: [move1, move2]
     };
     
-    dispatch(createPokemon(payload))
+    
 
-    let createdPokemon;
+    let createdPokemon = await dispatch(createPokemon(payload));
     if (createdPokemon) {
       history.push(`/pokemon/${createdPokemon.id}`);
       hideForm();
