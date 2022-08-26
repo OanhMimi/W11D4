@@ -74,7 +74,6 @@ export const editPokemon = (pokemon, id) => async dispatch => {
     }
   })
   const data = await response.json();
-  console.log(data);
   dispatch(addOnePokemon(data));
   return data;
 

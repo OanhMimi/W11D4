@@ -36,7 +36,6 @@ const EditPokemonForm = ({ pokemon, hideForm }) => {
     e.preventDefault();
 
 
-
     const payload = {
       ...pokemon,
       number,
